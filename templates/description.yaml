@@ -1,0 +1,28 @@
+# Copy this file to benchmarks/<package_name>/description.yaml.
+#
+# intent and functional_requirements are required. target_environment is
+# optional and must be removed when it adds no implementation-relevant context.
+# The ordered FR ids and text must exactly match metric.yaml metrics.
+
+intent:
+  package_name: example_package
+  summary: >-
+    Describe the package's primary purpose and observable outcome.
+  scope: >-
+    State what the package implements and what external systems must provide.
+
+functional_requirements:
+  - id: FR-1
+    text: >-
+      Describe one public observable package behavior.
+
+  - id: FR-2
+    text: >-
+      Describe a second distinct public behavior without prescribing
+      incidental implementation details.
+
+# Remove this field for platform-independent utilities when it adds no material
+# generation context. Keep it to one concise natural-language statement; do not
+# turn it into a topic, TF, parameter, or dependency inventory.
+target_environment: >-
+  Describe the target robot, sensor, or system environment.
