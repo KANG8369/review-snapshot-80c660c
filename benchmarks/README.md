@@ -79,7 +79,7 @@ Rules:
 - `evaluation`, `reference`, `reference_evidence`, `requirement_ids`, paths,
   anchors, snippets, and explanations are not allowed.
 
-All current PCs are evaluated statically by framework policy. Evaluation mode
+All current PCs are evaluated statically by benchmark policy. Evaluation mode
 is not repeated in each PC.
 
 ## Result Aggregation
@@ -87,7 +87,7 @@ is not repeated in each PC.
 ```text
 all PCs under an FR pass -> FR pass
 any PC under an FR fails -> FR fail
-build passes + all FRs pass -> Static Gate pass
+build passes + all FRs pass -> benchmark pass
 ```
 
 The Evaluator must cite candidate evidence from the generated package. Optional
@@ -114,9 +114,8 @@ review. It is not required by the revised data format and must not be used by
 the Evaluator to compare candidate source code. No reference evidence belongs
 in `metric.yaml`.
 
-The current registry implementation still checks for this directory and is
-being migrated separately; this is a temporary loader constraint, not part of
-the revised benchmark contract.
+The case format is defined by the Description and Metric; the retained
+reference files serve only as authoring provenance and review material.
 
 ## Authoring Checklist
 

@@ -162,8 +162,8 @@ All PCs in the current benchmark are evaluated statically from:
 - the recorded build result.
 
 Per-PC `evaluation` is not included in `metric.yaml`. If dynamic or simulation
-evaluation is added later, it belongs to a separate frozen harness and
-framework-level protocol rather than an ad hoc criterion field.
+evaluation is added later, it belongs to a separately specified evaluation
+protocol rather than an ad hoc criterion field.
 
 ## Aggregation
 
@@ -172,11 +172,11 @@ The deterministic aggregation rule is:
 ```text
 all PCs under one FR pass -> FR pass
 any PC under one FR fails -> FR fail
-build passes and all FRs pass -> Static Gate pass
+build validation passes and all FRs pass -> benchmark pass
 ```
 
-The Orchestrator should verify the Evaluator's FR aggregation instead of
-trusting an unsupported aggregate result.
+An FR-level result must be consistent with the recorded PC decisions; an
+unsupported aggregate pass is insufficient.
 
 ## Evidence and Feedback
 
@@ -196,10 +196,8 @@ Evidence and feedback are Evaluator outputs, not Metric fields.
 Evidence must cite the generated candidate package. Optional reference archives
 are never candidate evidence and are not accessible to the Evaluator.
 
-The framework must define whether failed-PC details are forwarded to the Coder.
-Forwarding detailed PC feedback improves repair performance but reveals part of
-the hidden rubric after the first evaluation. First-turn and final-turn scores
-should therefore be reported separately when such feedback is enabled.
+Feedback shown to the Coder should summarize failed FRs and relevant candidate
+evidence without disclosing hidden PC identities, text, or per-PC feedback.
 
 ## Forbidden Fields
 

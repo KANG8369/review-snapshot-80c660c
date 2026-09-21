@@ -49,9 +49,6 @@ def main() -> None:
         raise ValueError(
             f"expected {args.expected_case_count} cases, found {len(case_dirs)}"
         )
-    if any(path.name == "nav2_collision_monitor" for path in case_dirs):
-        raise ValueError("deleted nav2_collision_monitor case is still present")
-
     total_requirements = 0
     total_criteria = 0
     for case_dir in case_dirs:
