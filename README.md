@@ -1,8 +1,4 @@
-# ROS 2 Package-Generation Benchmark: Anonymous Review Artifact
-
-This snapshot contains the five benchmark cases evaluated in the accompanying
-paper. It provides package-generation tasks and their evaluation criteria; it
-does not contain the generated model outputs or an executable agent workflow.
+# ROS 2 Package-Generation Benchmark
 
 ## Benchmark Cases
 
